@@ -1,0 +1,4 @@
+name: JeffBungeeKickToLobby
+main: de.jeff_media.jeffbungeekicktolobby.JeffBungeeKickToLobby
+version: ${project.version}
+authors: [mfnalex,JEFF Media GbR]
