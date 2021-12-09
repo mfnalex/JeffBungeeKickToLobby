@@ -1,4 +1,4 @@
-package de.jeff_media.bungeecore;
+package de.jeff_media.bungeecore.bungee;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;

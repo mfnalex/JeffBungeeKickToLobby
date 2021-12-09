@@ -1,4 +1,4 @@
 name: BungeeCore
-main: de.jeff_media.bungeecore.BungeeCore
+main: de.jeff_media.bungeecore.bungee.BungeeCore
 version: ${project.version}
 authors: [mfnalex,JEFF Media GbR]

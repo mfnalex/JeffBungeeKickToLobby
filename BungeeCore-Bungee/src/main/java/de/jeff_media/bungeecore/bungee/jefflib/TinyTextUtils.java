@@ -1,4 +1,4 @@
-package de.jeff_media.bungeecore.jefflib;
+package de.jeff_media.bungeecore.bungee.jefflib;
 
 import lombok.experimental.UtilityClass;
 import net.md_5.bungee.api.ChatColor;

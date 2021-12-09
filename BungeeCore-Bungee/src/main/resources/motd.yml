@@ -1,0 +1,13 @@
+enabled: true
+
+max-players: 1000
+
+motd: "<#99B898>JEFF Media GbR <#FF847C>SMP Server\n<#E84A5F>&lGive-Away Event!&r&o<#FECEAB> %countdown%!"
+
+# Add a UNIX timestamp here. Can be used as %countdown% in the motd to show the remaining time
+countdown: 1639155600
+countdown-text-before: "Starting in %timeleft%"
+countdown-text-after: "&lONGOING NOW!"
+
+# When true, also sends the server-icon.png file from your server directory
+server-icon: true

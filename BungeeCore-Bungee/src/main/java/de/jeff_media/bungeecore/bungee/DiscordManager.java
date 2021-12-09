@@ -1,4 +1,4 @@
-package de.jeff_media.bungeecore;
+package de.jeff_media.bungeecore.bungee;
 
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -7,6 +7,8 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.requests.restaction.MessageAction;
 import net.md_5.bungee.config.Configuration;
+
+import javax.security.auth.login.LoginException;
 
 public class DiscordManager {
 
@@ -20,10 +22,15 @@ public class DiscordManager {
         if(discord != null) discord.shutdownNow();
         this.main = main;
         this.config = main.loadConfig("discord.yml");
-        if (config.getBoolean("enabled")) {
-            this.discord = JDABuilder.createDefault(config.getString("bot-token")).build();
-        } else {
-            this.discord = null;
+        try {
+            if (config.getBoolean("enabled")) {
+                discord = JDABuilder.createDefault(config.getString("bot-token")).build();
+            } else {
+                discord = null;
+            }
+        } catch (LoginException exception) {
+            main.getLogger().severe("Could not log into Discord:");
+            exception.printStackTrace();
         }
     }
 

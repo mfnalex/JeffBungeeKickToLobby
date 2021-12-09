@@ -1,8 +1,8 @@
-package de.jeff_media.bungeecore.listeners;
+package de.jeff_media.bungeecore.bungee.listeners;
 
-import de.jeff_media.bungeecore.BungeeCore;
-import de.jeff_media.bungeecore.DiscordChannel;
-import de.jeff_media.bungeecore.jefflib.TinyTextUtils;
+import de.jeff_media.bungeecore.bungee.DiscordChannel;
+import de.jeff_media.bungeecore.bungee.BungeeCore;
+import de.jeff_media.bungeecore.bungee.jefflib.TinyTextUtils;
 import lombok.Getter;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -13,8 +13,7 @@ import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.event.EventHandler;
 
-import java.util.List;
-import java.util.function.Function;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class JoinLeaveListener implements Listener {
@@ -65,8 +64,11 @@ public class JoinLeaveListener implements Listener {
     public void onJoin(PostLoginEvent event) {
         if(!isEnabled()) return;
         ProxiedPlayer player = event.getPlayer();
-        ProxyServer.getInstance().broadcast(TextComponent.fromLegacyText(getMessage(MessageType.JOIN_CHAT, player)));
-        sendDiscordMessage(getMessage(MessageType.JOIN_DISCORD,player));
+        ProxyServer.getInstance().getScheduler().schedule(main, () -> {
+            if(!player.isConnected()) return;
+            ProxyServer.getInstance().broadcast(TextComponent.fromLegacyText(getMessage(MessageType.JOIN_CHAT, player)));
+            sendDiscordMessage(getMessage(MessageType.JOIN_DISCORD, player));
+        }, 1, TimeUnit.SECONDS);
     }
 
     @EventHandler

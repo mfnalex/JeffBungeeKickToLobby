@@ -1,7 +1,7 @@
-package de.jeff_media.bungeecore.listeners;
+package de.jeff_media.bungeecore.bungee.listeners;
 
-import de.jeff_media.bungeecore.BungeeCore;
-import de.jeff_media.bungeecore.jefflib.TinyTextUtils;
+import de.jeff_media.bungeecore.bungee.BungeeCore;
+import de.jeff_media.bungeecore.bungee.jefflib.TinyTextUtils;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -33,7 +33,7 @@ public class KickListener implements Listener {
     @EventHandler
     public void onKick(ServerKickEvent event) {
         if(!config.getBoolean("enabled")) return;
-        final ServerInfo fallback = main.getProxy().getServerInfo(config.getString("fallback","lobby"));
+        final ServerInfo fallback = main.getProxy().getServerInfo(config.getString("server","lobby"));
         if(fallback == null) return;
         final ServerInfo current = event.getKickedFrom();
         if(current.equals(fallback)) return;
