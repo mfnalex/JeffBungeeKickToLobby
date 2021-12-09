@@ -1,0 +1,45 @@
+# KickFallback allows you to specify a fallback server to which players get teleported
+# when they get kicked from their current server.
+
+# When not enabled, this module does nothing.
+enabled: true
+
+# Fallback server to connect to
+server: lobby
+
+# Regex strings to check the kick reason. Only when the
+# kick reason matches one of the following regex, the plugin
+# will send the player to the fallback server instead.
+reasons:
+  - ".*Server closed.*"
+# - ".*" # Matches all cases
+
+# Message to send to players
+# Placeholders:
+#   - %from%    Name of the stopped server
+#   - %to%      Name of the server to send the player to
+#   - %player%  Name of the affected player
+send-message: true
+message:
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - ""
+  - "<#F8B195>&l» Ooo<#/F67280><#F67280>oh noo<#/C06C84><#C06C84>ooooo!<#/6C5B7B>"
+  - "<#F67280>%server%<#355C7D> is restarting. You can reconnect in 10 seconds.<#/C06C84>"

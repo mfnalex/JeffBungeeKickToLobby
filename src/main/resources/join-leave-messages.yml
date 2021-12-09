@@ -1,0 +1,16 @@
+enabled: true
+
+# Placeholders:
+#    %player%  - Player
+
+join-message-chat:
+  - "&6%player% joined the game."
+
+join-message-discord:
+  - ":green_circle: **%player%** joined the game."
+
+leave-message-chat:
+  - "&6%player% left the game."
+
+leave-message-discord:
+  - ":red_circle: **%player%** left the game."

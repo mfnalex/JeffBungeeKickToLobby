@@ -1,0 +1,12 @@
+# If you don't want to use Discord at all, you can disable it here.
+enabled: true
+
+# Add your Bot token here.
+bot-token: ""
+
+join-leave-messages:
+  enabled: true
+  channel: 0
+debug:
+  enabled: true
+  channel: 0
