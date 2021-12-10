@@ -72,7 +72,7 @@ public class JoinLeaveListener implements Listener {
     }
 
     @EventHandler
-    public void onJoin(PlayerDisconnectEvent event) {
+    public void onLeave(PlayerDisconnectEvent event) {
         if(!isEnabled()) return;
         ProxiedPlayer player = event.getPlayer();
         ProxyServer.getInstance().broadcast(TextComponent.fromLegacyText(getMessage(MessageType.LEAVE_CHAT, player)));

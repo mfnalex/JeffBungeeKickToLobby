@@ -1,4 +1,4 @@
-name: BungeeCore
+name: JeffBungeeCore
 main: de.jeff_media.bungeecore.bukkit.BungeeCore
 version: ${project.version}
 api-version: "1.13"
